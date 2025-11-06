@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://o6nl1jn0jxk7"]
+
+[ext_resource type="Script" uid="uid://bxo7ehqft1tyf" path="res://scripts/h_box_container.gd" id="1_vii3e"]
+[ext_resource type="Texture2D" uid="uid://dg6jqf2glqeae" path="res://sprites/WaterHealth-full.png" id="2_vii3e"]
+
+[node name="healthbar" type="HBoxContainer"]
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_vii3e")
+
+[node name="1" type="TextureRect" parent="."]
+layout_mode = 2
+texture = ExtResource("2_vii3e")
+
+[node name="2" type="TextureRect" parent="."]
+layout_mode = 2
+texture = ExtResource("2_vii3e")
+
+[node name="3" type="TextureRect" parent="."]
+layout_mode = 2
+texture = ExtResource("2_vii3e")
