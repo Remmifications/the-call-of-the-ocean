@@ -12,7 +12,7 @@ config_version=5
 
 config/name="The Call of the Ocean"
 run/main_scene="uid://bmgbuqw0r4tye"
-config/features=PackedStringArray("4.4", "GL Compatibility")
+config/features=PackedStringArray("4.5", "GL Compatibility")
 config/icon="res://icon.svg"
 
 [display]

@@ -1,10 +1,13 @@
-[gd_scene load_steps=8 format=4 uid="uid://bmgbuqw0r4tye"]
+[gd_scene load_steps=11 format=4 uid="uid://bmgbuqw0r4tye"]
 
 [ext_resource type="Script" uid="uid://mfk1k213f77l" path="res://scripts/game.gd" id="1_7jktm"]
 [ext_resource type="PackedScene" uid="uid://cc5yuvcx4d3qv" path="res://player.tscn" id="1_e2o6t"]
 [ext_resource type="Texture2D" uid="uid://xvq6jtbssxyj" path="res://sprites/TileSpritesheet.png" id="2_feb5d"]
 [ext_resource type="PackedScene" uid="uid://curuqaunpqp8k" path="res://egg.tscn" id="4_fc0e3"]
 [ext_resource type="PackedScene" uid="uid://o6nl1jn0jxk7" path="res://healthbar.tscn" id="5_7jktm"]
+[ext_resource type="Script" uid="uid://dfkricpljkwt3" path="res://canvas_layer.gd" id="5_j5wjh"]
+[ext_resource type="Texture2D" uid="uid://dt2l7sxhg7fox" path="res://sprites/Eggcoin.png" id="6_eow3j"]
+[ext_resource type="FontFile" uid="uid://vvm7gysc4018" path="res://sprites/PixelOperator.ttf" id="7_j5wjh"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fc0e3"]
 texture = ExtResource("2_feb5d")
@@ -48,8 +51,33 @@ use_kinematic_bodies = true
 [node name="egg" parent="." instance=ExtResource("4_fc0e3")]
 position = Vector2(519, 210)
 
-[node name="healthbar" parent="." instance=ExtResource("5_7jktm")]
-offset_left = 377.0
-offset_top = 235.0
-offset_right = 481.0
-offset_bottom = 275.0
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+script = ExtResource("5_j5wjh")
+
+[node name="healthbar" parent="CanvasLayer" instance=ExtResource("5_7jktm")]
+offset_right = 104.0
+scale = Vector2(3.3707733, 3.3707733)
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(40, 150.00002)
+scale = Vector2(2.472681, 2.472681)
+texture = ExtResource("6_eow3j")
+
+[node name="money" type="Label" parent="CanvasLayer"]
+offset_left = 79.0
+offset_top = 129.00002
+offset_right = 119.0
+offset_bottom = 152.00002
+scale = Vector2(2.862804, 2.862804)
+theme_override_fonts/font = ExtResource("7_j5wjh")
+text = "x 0"
+
+[node name="ammo" type="Label" parent="CanvasLayer"]
+offset_left = 15.999998
+offset_top = 183.0
+offset_right = 99.0
+offset_bottom = 206.0
+scale = Vector2(1.5565656, 1.5565656)
+theme_override_fonts/font = ExtResource("7_j5wjh")
+text = "Water = 10/10"
+horizontal_alignment = 2
