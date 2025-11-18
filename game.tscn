@@ -49,21 +49,33 @@ tile_set = SubResource("TileSet_7jktm")
 use_kinematic_bodies = true
 
 [node name="egg" parent="." instance=ExtResource("4_fc0e3")]
-position = Vector2(519, 210)
+position = Vector2(521, 213)
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="egg2" parent="." instance=ExtResource("4_fc0e3")]
+position = Vector2(244, 247)
+
+[node name="egg3" parent="." instance=ExtResource("4_fc0e3")]
+position = Vector2(844, 150)
+
+[node name="egg4" parent="." instance=ExtResource("4_fc0e3")]
+position = Vector2(659, 152)
+
+[node name="egg5" parent="." instance=ExtResource("4_fc0e3")]
+position = Vector2(388, 206)
+
+[node name="HUD" type="CanvasLayer" parent="."]
 script = ExtResource("5_j5wjh")
 
-[node name="healthbar" parent="CanvasLayer" instance=ExtResource("5_7jktm")]
+[node name="healthbar" parent="HUD" groups=["player"] instance=ExtResource("5_7jktm")]
 offset_right = 104.0
 scale = Vector2(3.3707733, 3.3707733)
 
-[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer"]
+[node name="Sprite2D" type="Sprite2D" parent="HUD"]
 position = Vector2(40, 150.00002)
 scale = Vector2(2.472681, 2.472681)
 texture = ExtResource("6_eow3j")
 
-[node name="money" type="Label" parent="CanvasLayer"]
+[node name="money" type="Label" parent="HUD" groups=["player"]]
 offset_left = 79.0
 offset_top = 129.00002
 offset_right = 119.0
@@ -72,7 +84,7 @@ scale = Vector2(2.862804, 2.862804)
 theme_override_fonts/font = ExtResource("7_j5wjh")
 text = "x 0"
 
-[node name="ammo" type="Label" parent="CanvasLayer"]
+[node name="Wammo" type="Label" parent="HUD"]
 offset_left = 15.999998
 offset_top = 183.0
 offset_right = 99.0
@@ -81,3 +93,12 @@ scale = Vector2(1.5565656, 1.5565656)
 theme_override_fonts/font = ExtResource("7_j5wjh")
 text = "Water = 10/10"
 horizontal_alignment = 2
+
+[node name="Iammo" type="Label" parent="HUD"]
+offset_left = 16.0
+offset_top = 215.00002
+offset_right = 68.0
+offset_bottom = 238.00002
+scale = Vector2(1.6468841, 1.6468841)
+theme_override_fonts/font = ExtResource("7_j5wjh")
+text = "Ink = 5/5"

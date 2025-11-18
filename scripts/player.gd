@@ -4,20 +4,14 @@ extends CharacterBody2D
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
-@onready var healthbar: HBoxContainer = $"../CanvasLayer/healthbar"
+@onready var healthbar: HBoxContainer = $"../HUD/healthbar"
 @export var max_health = 6
-@export var max_water = 10
-@export var money = 0
-var water = 10
 var health = 6
-
-func _ready() -> void:
-	healthbar.update_health(0)
 	
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
-	healthbar.update_health(health)
+	healthbar.update_partial(health)
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 

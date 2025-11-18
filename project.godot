@@ -15,6 +15,10 @@ run/main_scene="uid://bmgbuqw0r4tye"
 config/features=PackedStringArray("4.5", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[autoload]
+
+Global="*res://global_singleton.gd"
+
 [display]
 
 window/vsync/vsync_mode=0

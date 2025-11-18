@@ -1,11 +1,12 @@
 extends CanvasLayer
 
-@onready var ammo: Label = $ammo
-@onready var money: Label = $money
 @onready var player: CharacterBody2D = $"../Player"
+@onready var money: Label = $money
+@onready var wammo: Label = $Wammo
+@onready var iammo: Label = $Iammo
+@onready var global_singleton: CanvasLayer = $"."
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
-	ammo.text = "Water = " + str(player.water) + "/" + str(player.max_water)
-	
+	money.text = "x" + str(Global.money)
