@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=4 uid="uid://bmgbuqw0r4tye"]
+[gd_scene load_steps=13 format=4 uid="uid://bmgbuqw0r4tye"]
 
 [ext_resource type="Script" uid="uid://mfk1k213f77l" path="res://scripts/game.gd" id="1_7jktm"]
 [ext_resource type="PackedScene" uid="uid://cc5yuvcx4d3qv" path="res://player.tscn" id="1_e2o6t"]
@@ -8,6 +8,8 @@
 [ext_resource type="Script" uid="uid://dfkricpljkwt3" path="res://canvas_layer.gd" id="5_j5wjh"]
 [ext_resource type="Texture2D" uid="uid://dt2l7sxhg7fox" path="res://sprites/Eggcoin.png" id="6_eow3j"]
 [ext_resource type="FontFile" uid="uid://vvm7gysc4018" path="res://sprites/PixelOperator.ttf" id="7_j5wjh"]
+[ext_resource type="PackedScene" uid="uid://c2hdw6kdil2b3" path="res://platform_w.tscn" id="9_vef74"]
+[ext_resource type="PackedScene" uid="uid://ulm2jsqyaom7" path="res://platform_c.tscn" id="10_hve3p"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fc0e3"]
 texture = ExtResource("2_feb5d")
@@ -102,3 +104,9 @@ offset_bottom = 238.00002
 scale = Vector2(1.6468841, 1.6468841)
 theme_override_fonts/font = ExtResource("7_j5wjh")
 text = "Ink = 5/5"
+
+[node name="PlatformW" parent="." instance=ExtResource("9_vef74")]
+position = Vector2(612, 296)
+
+[node name="AnimatableBody2D" parent="." instance=ExtResource("10_hve3p")]
+position = Vector2(294, 272)

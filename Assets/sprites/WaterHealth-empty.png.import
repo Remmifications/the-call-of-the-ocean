@@ -2,22 +2,24 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cbtlstbyvjs48"
-path="res://.godot/imported/WaterHealth.png-4abbd434f7a20c4c0aa2031e2e0d5cab.ctex"
+uid="uid://da8pbm7qy8ros"
+path="res://.godot/imported/WaterHealth-empty.png-5f2877bbe00f89f2ce0d8ceba7f68836.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/WaterHealth.png"
-dest_files=["res://.godot/imported/WaterHealth.png-4abbd434f7a20c4c0aa2031e2e0d5cab.ctex"]
+source_file="res://Assets/sprites/WaterHealth-empty.png"
+dest_files=["res://.godot/imported/WaterHealth-empty.png-5f2877bbe00f89f2ce0d8ceba7f68836.ctex"]
 
 [params]
 
 compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
+compress/uastc_level=0
+compress/rdo_quality_loss=0.0
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
@@ -25,6 +27,10 @@ mipmaps/generate=false
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""
+process/channel_remap/red=0
+process/channel_remap/green=1
+process/channel_remap/blue=2
+process/channel_remap/alpha=3
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/normal_map_invert_y=false

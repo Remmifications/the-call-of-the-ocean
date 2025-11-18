@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://cub7ka0r35bra"]
+
+[ext_resource type="Texture2D" uid="uid://b47c43mm5lbby" path="res://sprites/inkplat.png" id="1_hchpn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3dylq"]
+size = Vector2(64, 16)
+
+[node name="AnimatableBody2D" type="AnimatableBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_hchpn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_3dylq")
+one_way_collision = true
