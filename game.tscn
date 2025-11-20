@@ -1,13 +1,13 @@
 [gd_scene load_steps=13 format=4 uid="uid://bmgbuqw0r4tye"]
 
-[ext_resource type="Script" uid="uid://mfk1k213f77l" path="res://scripts/game.gd" id="1_7jktm"]
+[ext_resource type="Script" uid="uid://mfk1k213f77l" path="res://Assets/scripts/game.gd" id="1_7jktm"]
 [ext_resource type="PackedScene" uid="uid://cc5yuvcx4d3qv" path="res://player.tscn" id="1_e2o6t"]
-[ext_resource type="Texture2D" uid="uid://xvq6jtbssxyj" path="res://sprites/TileSpritesheet.png" id="2_feb5d"]
+[ext_resource type="Texture2D" uid="uid://xvq6jtbssxyj" path="res://Assets/sprites/TileSpritesheet.png" id="2_feb5d"]
 [ext_resource type="PackedScene" uid="uid://curuqaunpqp8k" path="res://egg.tscn" id="4_fc0e3"]
 [ext_resource type="PackedScene" uid="uid://o6nl1jn0jxk7" path="res://healthbar.tscn" id="5_7jktm"]
 [ext_resource type="Script" uid="uid://dfkricpljkwt3" path="res://canvas_layer.gd" id="5_j5wjh"]
-[ext_resource type="Texture2D" uid="uid://dt2l7sxhg7fox" path="res://sprites/Eggcoin.png" id="6_eow3j"]
-[ext_resource type="FontFile" uid="uid://vvm7gysc4018" path="res://sprites/PixelOperator.ttf" id="7_j5wjh"]
+[ext_resource type="Texture2D" uid="uid://dt2l7sxhg7fox" path="res://Assets/sprites/Eggcoin.png" id="6_eow3j"]
+[ext_resource type="FontFile" uid="uid://vvm7gysc4018" path="res://Assets/sprites/PixelOperator.ttf" id="7_j5wjh"]
 [ext_resource type="PackedScene" uid="uid://c2hdw6kdil2b3" path="res://platform_w.tscn" id="9_vef74"]
 [ext_resource type="PackedScene" uid="uid://ulm2jsqyaom7" path="res://platform_c.tscn" id="10_hve3p"]
 

@@ -7,7 +7,9 @@ const JUMP_VELOCITY = -400.0
 @onready var healthbar: HBoxContainer = $"../HUD/healthbar"
 @export var max_health = 6
 var health = 6
-	
+var shot_cooldown = true
+var waterproj = preload("res://Assets/scenes/water.tscn")
+var inkproj = preload("res://ink.tscn")
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -36,3 +38,30 @@ func _physics_process(delta: float) -> void:
 		
 
 	move_and_slide()
+	
+	
+	var mouse_position = get_global_mouse_position()
+	$Marker2D.look_at(mouse_position)
+	
+	
+	if Input.is_action_just_pressed("left_mouse") and shot_cooldown:
+		shot_cooldown = false
+		var water_instance = waterproj.instantiate()
+		water_instance.rotation = $Marker2D.rotation
+		water_instance.global_position = $Marker2D.global_position
+		add_child(water_instance)
+		
+		await get_tree().create_timer(0.5).timeout
+		shot_cooldown = true
+		
+	if Input.is_action_just_pressed("right_mouse") and shot_cooldown:
+		shot_cooldown = false
+		var ink_instance = inkproj.instantiate()
+		ink_instance.rotation = $Marker2D.rotation
+		ink_instance.global_position = $Marker2D.global_position
+		add_child(ink_instance)
+		
+		await get_tree().create_timer(0.5).timeout
+		shot_cooldown = true
+		
+		

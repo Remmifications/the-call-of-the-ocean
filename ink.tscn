@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://brj0twpaod10h"]
+
+[ext_resource type="Script" uid="uid://b452yg1s8stp" path="res://ink.gd" id="1_ra0jv"]
+[ext_resource type="Texture2D" uid="uid://bgn4lbuhat0x" path="res://Assets/sprites/Projectiles.png" id="2_6q22w"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_g00mh"]
+radius = 9.0
+height = 26.0
+
+[node name="Ink" type="Area2D"]
+scale = Vector2(0.67, 0.67)
+script = ExtResource("1_ra0jv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, -1)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_g00mh")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_6q22w")
+region_enabled = true
+region_rect = Rect2(0, 32, 32, 32)
+
+[node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="."]
+rect = Rect2(-14.925373, -8.955223, 14.925373, 16.41791)
