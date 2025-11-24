@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=4 uid="uid://bmgbuqw0r4tye"]
+[gd_scene load_steps=14 format=4 uid="uid://bmgbuqw0r4tye"]
 
 [ext_resource type="Script" uid="uid://mfk1k213f77l" path="res://Assets/scripts/game.gd" id="1_7jktm"]
 [ext_resource type="PackedScene" uid="uid://cc5yuvcx4d3qv" path="res://player.tscn" id="1_e2o6t"]
@@ -8,6 +8,7 @@
 [ext_resource type="Script" uid="uid://dfkricpljkwt3" path="res://canvas_layer.gd" id="5_j5wjh"]
 [ext_resource type="Texture2D" uid="uid://dt2l7sxhg7fox" path="res://Assets/sprites/Eggcoin.png" id="6_eow3j"]
 [ext_resource type="FontFile" uid="uid://vvm7gysc4018" path="res://Assets/sprites/PixelOperator.ttf" id="7_j5wjh"]
+[ext_resource type="PackedScene" uid="uid://ccmx62woumehr" path="res://shooting_button.tscn" id="9_mfdv2"]
 [ext_resource type="PackedScene" uid="uid://c2hdw6kdil2b3" path="res://platform_w.tscn" id="9_vef74"]
 [ext_resource type="PackedScene" uid="uid://ulm2jsqyaom7" path="res://platform_c.tscn" id="10_hve3p"]
 
@@ -104,6 +105,13 @@ offset_bottom = 238.00002
 scale = Vector2(1.6468841, 1.6468841)
 theme_override_fonts/font = ExtResource("7_j5wjh")
 text = "Ink = 5/5"
+
+[node name="Shooting_button" parent="HUD" instance=ExtResource("9_mfdv2")]
+offset_left = 167.0
+offset_top = 114.99999
+offset_right = 679.0
+offset_bottom = 627.0
+scale = Vector2(0.11524946, 0.11524946)
 
 [node name="PlatformW" parent="." instance=ExtResource("9_vef74")]
 position = Vector2(612, 296)
