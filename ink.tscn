@@ -9,6 +9,7 @@ height = 26.0
 
 [node name="Ink" type="Area2D"]
 scale = Vector2(0.67, 0.67)
+collision_mask = 2
 script = ExtResource("1_ra0jv")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -23,3 +24,5 @@ region_rect = Rect2(0, 32, 32, 32)
 
 [node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="."]
 rect = Rect2(-14.925373, -8.955223, 14.925373, 16.41791)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

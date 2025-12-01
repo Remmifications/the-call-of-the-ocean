@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://curuqaunpqp8k"]
 
-[ext_resource type="Texture2D" uid="uid://cc6jdcx1wp40a" path="res://sprites/New Piskel.png" id="1_6upkn"]
-[ext_resource type="Script" uid="uid://ceviu8gdnj0hk" path="res://scripts/egg.gd" id="1_60cwx"]
+[ext_resource type="Texture2D" uid="uid://cc6jdcx1wp40a" path="res://Assets/sprites/New Piskel.png" id="1_6upkn"]
+[ext_resource type="Script" uid="uid://ceviu8gdnj0hk" path="res://Assets/scripts/egg.gd" id="1_60cwx"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_60cwx"]
 radius = 12.0

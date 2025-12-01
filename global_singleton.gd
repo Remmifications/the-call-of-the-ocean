@@ -14,4 +14,4 @@ func update_wammo(wammo):
 	wammo = "Water = " + str(wammo) + "/ 10"
 	
 func update_iammo(iammo):
-	iammo.text = "Ink =" + str(iammo) + "/ 5"
+	iammo = "Ink =" + str(iammo) + "/ 5"

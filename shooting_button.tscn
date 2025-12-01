@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://exbhgmbaof5l" path="res://shooting_button.gd" id="2_ayq7h"]
 [ext_resource type="FontFile" uid="uid://vvm7gysc4018" path="res://Assets/sprites/PixelOperator.ttf" id="3_uaksc"]
 
-[node name="Shooting_button" type="TextureButton"]
+[node name="shot_cool_display" type="TextureButton"]
 offset_right = 40.0
 offset_bottom = 40.0
 texture_normal = ExtResource("1_v0sd6")
@@ -23,17 +23,6 @@ grow_horizontal = 2
 grow_vertical = 2
 fill_mode = 5
 
-[node name="Counter" type="MarginContainer" parent="."]
-layout_mode = 1
-anchors_preset = 12
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_constants/margin_left = 25
-theme_override_constants/margin_right = 5
-
 [node name="Value" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = 15
@@ -43,6 +32,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/outline_size = 1
 theme_override_fonts/font = ExtResource("3_uaksc")
+theme_override_font_sizes/font_size = 300
 text = "0.0"
 horizontal_alignment = 2
 vertical_alignment = 2

@@ -1,11 +1,12 @@
 [gd_scene load_steps=3 format=3 uid="uid://c2hdw6kdil2b3"]
 
-[ext_resource type="Texture2D" uid="uid://xvq6jtbssxyj" path="res://sprites/TileSpritesheet.png" id="1_vadef"]
+[ext_resource type="Texture2D" uid="uid://xvq6jtbssxyj" path="res://Assets/sprites/TileSpritesheet.png" id="1_vadef"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3wxmk"]
 size = Vector2(92, 16)
 
 [node name="PlatformW" type="AnimatableBody2D"]
+collision_layer = 3
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(5.750001, 396)

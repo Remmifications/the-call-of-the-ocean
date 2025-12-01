@@ -10,6 +10,10 @@ var health = 6
 var shot_cooldown = true
 var waterproj = preload("res://Assets/scenes/water.tscn")
 var inkproj = preload("res://ink.tscn")
+@onready var shooting_button: shot_cool_display = $"../HUD/Shooting_button"
+@onready var reload: reload_cool_display = $"../HUD/reload_cool_display"
+
+
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -45,23 +49,48 @@ func _physics_process(delta: float) -> void:
 	
 	
 	if Input.is_action_just_pressed("left_mouse") and shot_cooldown:
+		shooting_button.cooldown_start()
+		Global.water = int(Global.water) - 1
+		Global.update_wammo(Global.water)
 		shot_cooldown = false
 		var water_instance = waterproj.instantiate()
 		water_instance.rotation = $Marker2D.rotation
 		water_instance.global_position = $Marker2D.global_position
 		add_child(water_instance)
 		
-		await get_tree().create_timer(0.5).timeout
+		await get_tree().create_timer(0.8).timeout
 		shot_cooldown = true
 		
 	if Input.is_action_just_pressed("right_mouse") and shot_cooldown:
+		shooting_button.cooldown_start()
+		Global.ink = int(Global.ink) - 1
+		Global.update_iammo(Global.ink)
 		shot_cooldown = false
 		var ink_instance = inkproj.instantiate()
 		ink_instance.rotation = $Marker2D.rotation
 		ink_instance.global_position = $Marker2D.global_position
 		add_child(ink_instance)
 		
-		await get_tree().create_timer(0.5).timeout
+		await get_tree().create_timer(0.8).timeout
 		shot_cooldown = true
+		
+	if Global.ink == 0 :
+		reload.cooldown_start()
+		shot_cooldown = false
+		
+		await get_tree().create_timer(3).timeout
+		Global.ink = Global.max_ink
+		Global.water = Global.max_water
+		shot_cooldown = true
+	
+	if Global.water == 0:
+		reload.cooldown_start()
+		shot_cooldown = false
+		
+		await get_tree().create_timer(3).timeout
+		Global.water = Global.max_water
+		Global.ink = Global.max_ink
+		shot_cooldown = true
+		
 		
 		

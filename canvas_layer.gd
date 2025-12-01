@@ -10,3 +10,7 @@ extends CanvasLayer
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	money.text = "x" + str(Global.money)
+	wammo.text = "Water =  " + str(Global.water) + "/" + str(Global.max_water)
+	iammo.text = "Ink = " + str(Global.ink) + "/" + str(Global.max_ink)
+	
+	

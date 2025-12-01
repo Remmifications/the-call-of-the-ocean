@@ -1,6 +1,7 @@
 extends Area2D
 
 var speed = 300
+const EXPLOSION_2 = preload("uid://bqugmg38hc4se")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -13,4 +14,15 @@ func _process(delta: float) -> void:
 	
 	
 func _on_visible_on_screen_enabler_2d_screen_exited() -> void:
+	queue_free()
+
+func kill():
+	var explosions = EXPLOSION_2.instantiate()
+	explosions.position = global_position
+	explosions.rotation = global_rotation
+	explosions.emitting = true
+	get_tree().current_scene.add_child(explosions)
+
+func _on_body_entered(body: Node2D) -> void:
+	kill()
 	queue_free()

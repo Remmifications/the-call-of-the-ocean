@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://bmgbuqw0r4tye"]
+[gd_scene load_steps=15 format=4 uid="uid://bmgbuqw0r4tye"]
 
 [ext_resource type="Script" uid="uid://mfk1k213f77l" path="res://Assets/scripts/game.gd" id="1_7jktm"]
 [ext_resource type="PackedScene" uid="uid://cc5yuvcx4d3qv" path="res://player.tscn" id="1_e2o6t"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://ccmx62woumehr" path="res://shooting_button.tscn" id="9_mfdv2"]
 [ext_resource type="PackedScene" uid="uid://c2hdw6kdil2b3" path="res://platform_w.tscn" id="9_vef74"]
 [ext_resource type="PackedScene" uid="uid://ulm2jsqyaom7" path="res://platform_c.tscn" id="10_hve3p"]
+[ext_resource type="PackedScene" uid="uid://ekylft5i8b0n" path="res://reload_cool_display.tscn" id="12_iotsf"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fc0e3"]
 texture = ExtResource("2_feb5d")
@@ -32,7 +33,7 @@ texture = ExtResource("2_feb5d")
 1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 
 [sub_resource type="TileSet" id="TileSet_7jktm"]
-physics_layer_0/collision_layer = 1
+physics_layer_0/collision_layer = 3
 sources/0 = SubResource("TileSetAtlasSource_fc0e3")
 
 [node name="Game" type="Node2D"]
@@ -112,6 +113,13 @@ offset_top = 114.99999
 offset_right = 679.0
 offset_bottom = 627.0
 scale = Vector2(0.11524946, 0.11524946)
+
+[node name="reload_cool_display" parent="HUD" instance=ExtResource("12_iotsf")]
+offset_left = 226.99998
+offset_top = 115.0
+offset_right = 739.0
+offset_bottom = 627.0
+scale = Vector2(0.11625102, 0.11625102)
 
 [node name="PlatformW" parent="." instance=ExtResource("9_vef74")]
 position = Vector2(612, 296)

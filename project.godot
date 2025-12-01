@@ -23,6 +23,10 @@ Global="*res://global_singleton.gd"
 
 window/vsync/vsync_mode=0
 
+[dotnet]
+
+project/assembly_name="The Call of the Ocean"
+
 [global_group]
 
 player=""
