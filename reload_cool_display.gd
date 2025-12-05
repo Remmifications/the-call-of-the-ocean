@@ -25,7 +25,6 @@ func cooldown_start() -> void:
 	disabled = true
 	set_process(true)
 	timer.start()
-	print("timer started")
 	time_value.show()
 
 
@@ -38,6 +37,5 @@ func _on_pressed() -> void:
 func _on_timer_timeout() -> void:
 	$sweep.value = 0
 	disabled = false
-	print("Timer finished")
 	time_value.hide()
 	set_process(false)
