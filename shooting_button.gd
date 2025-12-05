@@ -23,6 +23,7 @@ func _process(delta: float) -> void:
 
 func cooldown_start() -> void:
 	disabled = true
+	print("timers started")
 	set_process(true)
 	timer.start()
 	time_label.show()
@@ -36,6 +37,7 @@ func _on_pressed() -> void:
 
 
 func _on_timer_timeout() -> void:
+	print("timers finished")
 	$Sweep.value = 0
 	disabled = false
 	time_label.hide()

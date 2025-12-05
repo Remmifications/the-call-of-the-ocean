@@ -74,7 +74,7 @@ func _physics_process(delta: float) -> void:
 		await get_tree().create_timer(0.8).timeout
 		shot_cooldown = true
 		
-	if Global.ink == 0 :
+	if Global.ink == 0 and shot_cooldown == true:
 		reload.cooldown_start()
 		shot_cooldown = false
 		
@@ -83,7 +83,7 @@ func _physics_process(delta: float) -> void:
 		Global.water = Global.max_water
 		shot_cooldown = true
 	
-	if Global.water == 0:
+	if Global.water == 0 and shot_cooldown == true:
 		reload.cooldown_start()
 		shot_cooldown = false
 		
