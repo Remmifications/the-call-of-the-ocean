@@ -2,6 +2,7 @@ extends Area2D
 
 var speed = 300
 const EXPLOSION_2 = preload("uid://bqugmg38hc4se")
+const PUDDLE = preload("res://puddle.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -22,6 +23,10 @@ func kill():
 	explosions.rotation = global_rotation
 	explosions.emitting = true
 	get_tree().current_scene.add_child(explosions)
+	var puddles = PUDDLE.instantiate()
+	puddles.position = global_position
+	puddles.rotation = global_rotation
+	get_tree().current_scene.add_child(puddles)
 
 func _on_body_entered(body: Node2D) -> void:
 	kill()

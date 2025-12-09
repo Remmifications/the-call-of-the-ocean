@@ -1,8 +1,8 @@
 extends CharacterBody2D
 
 
-const SPEED = 200.0
-const JUMP_VELOCITY = -400.0
+var speed = 200.0
+var jump_velocity = -400.0
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var healthbar: HBoxContainer = $"../HUD/healthbar"
 @export var max_health = 6
@@ -12,7 +12,8 @@ var waterproj = preload("res://Assets/scenes/water.tscn")
 var inkproj = preload("res://ink.tscn")
 @onready var shooting_button: shot_cool_display = $"../HUD/Shooting_button"
 @onready var reload: reload_cool_display = $"../HUD/reload_cool_display"
-
+var inked = false
+@onready var timer: Timer = $Timer
 
 
 func _physics_process(delta: float) -> void:
@@ -23,7 +24,8 @@ func _physics_process(delta: float) -> void:
 
 	# Handle jump.
 	if Input.is_action_just_pressed("jump") and is_on_floor():
-		velocity.y = JUMP_VELOCITY
+		velocity.y = jump_velocity
+		print(velocity.y)
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
@@ -35,14 +37,22 @@ func _physics_process(delta: float) -> void:
 		animated_sprite_2d.flip_h = true
 	
 	if direction:
-		velocity.x = direction * SPEED
+		velocity.x = direction * speed
+		print(velocity.x)
 	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
-		
+		velocity.x = move_toward(velocity.x, 0, speed)
 		
 
 	move_and_slide()
 	
+	
+	
+	if inked == true and speed == 200 and jump_velocity == -400:
+		speed += 75
+		jump_velocity -= 100
+		timer.start()
+	
+
 	
 	var mouse_position = get_global_mouse_position()
 	$Marker2D.look_at(mouse_position)
@@ -94,3 +104,10 @@ func _physics_process(delta: float) -> void:
 		
 		
 		
+
+
+func _on_timer_timeout() -> void:
+	inked = false
+	speed = 200
+	jump_velocity = -400
+	
